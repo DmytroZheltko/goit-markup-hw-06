@@ -513,7 +513,7 @@
       </div>
     </footer>
 
-    <!-- MOBILE MENU (перенесено після footer) -->
+    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="container mobile-menu-container">
         <button class="mobile-menu-close" type="button" id="closeMenuBtn">
@@ -539,12 +539,16 @@
         <address class="mobile-contacts">
           <ul class="mobile-contacts-list">
             <li>
-              <a class="mobile-contacts-link" href="tel:+110001111111"
+              <a
+                class="mobile-contacts-link mobile-contacts-tel"
+                href="tel:+110001111111"
                 >+11 (000) 111-11-11</a
               >
             </li>
             <li>
-              <a class="mobile-contacts-link" href="mailto:info@devstudio.com"
+              <a
+                class="mobile-contacts-link mobile-contacts-email"
+                href="mailto:info@devstudio.com"
                 >info@devstudio.com</a
               >
             </li>
@@ -658,33 +662,5 @@
         </form>
       </div>
     </div>
-
-    <script>
-      const burgerBtn = document.getElementById("burgerBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const closeMenuBtn = document.getElementById("closeMenuBtn");
-      if (burgerBtn && mobileMenu && closeMenuBtn) {
-        burgerBtn.addEventListener("click", () =>
-          mobileMenu.classList.add("is-open"),
-        );
-        closeMenuBtn.addEventListener("click", () =>
-          mobileMenu.classList.remove("is-open"),
-        );
-      }
-      const backdrop = document.getElementById("backdrop");
-      const closeModalBtn = document.getElementById("closeModalBtn");
-      const orderBtn = document.querySelector(".main-section-button");
-      if (backdrop && closeModalBtn && orderBtn) {
-        orderBtn.addEventListener("click", () =>
-          backdrop.classList.add("is-open"),
-        );
-        closeModalBtn.addEventListener("click", () =>
-          backdrop.classList.remove("is-open"),
-        );
-        backdrop.addEventListener("click", (e) => {
-          if (e.target === backdrop) backdrop.classList.remove("is-open");
-        });
-      }
-    </script>
   </body>
 </html>

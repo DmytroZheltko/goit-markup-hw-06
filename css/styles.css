@@ -200,7 +200,7 @@ a {
   }
 }
 
-/* MOBILE MENU (після footer) */
+/* MOBILE MENU */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -272,6 +272,12 @@ a {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  font-style: normal;
+}
+.mobile-contacts-tel {
+  color: #4d5ae5;
+}
+.mobile-contacts-email {
   color: #434455;
 }
 .mobile-soc-list {
@@ -501,7 +507,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  row-gap: 64px;
+  row-gap: 72px;
   column-gap: 24px;
 }
 .team-page-item {
@@ -581,17 +587,23 @@ a {
 .portfolio-page-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px;
+  row-gap: 48px;
+  column-gap: 24px;
 }
 @media screen and (min-width: 768px) {
   .portfolio-page-list {
-    gap: 72px 24px;
+    row-gap: 72px;
+    column-gap: 24px;
   }
   .portfolio-page-item {
     width: calc((100% - 24px) / 2);
   }
 }
 @media screen and (min-width: 1158px) {
+  .portfolio-page-list {
+    row-gap: 48px;
+    column-gap: 24px;
+  }
   .portfolio-page-item {
     width: calc((100% - 48px) / 3);
   }
@@ -633,7 +645,10 @@ a {
   background-color: #fff;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (hover: hover) {
+@media (min-width: 1158px) {
+  .portfolio-full-text {
+    box-shadow: none;
+  }
   .portfolio-page-item:hover .portfolio-full-text {
     box-shadow:
       0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -641,7 +656,7 @@ a {
       0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
 }
-@media (hover: none) {
+@media (max-width: 1157px) {
   .portfolio-full-text {
     box-shadow:
       0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -666,6 +681,11 @@ a {
 .footer-page {
   background-color: #2e2f42;
   padding: 96px 0;
+}
+@media screen and (min-width: 1158px) {
+  .footer-page {
+    padding: 100px 0;
+  }
 }
 .footer-container {
   max-width: 100%;
@@ -724,12 +744,7 @@ a {
   color: #f4f4fd;
   font-size: 16px;
   line-height: 1.5;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .footer-text {
-    text-align: left;
-  }
+  text-align: left;
 }
 .footer-social-title,
 .footer-subscribe-title {
@@ -780,6 +795,7 @@ a {
 @media screen and (min-width: 768px) {
   .subscribe-form {
     flex-wrap: nowrap;
+    gap: 24px;
   }
 }
 .subscribe-input {
